@@ -1,0 +1,12 @@
+#include <stdio.h>
+#include "_putchar.c" 
+/**
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
+ */
+int print_putchar(void)
+{
+  printf("_putchar");
+  return (0);
+}
