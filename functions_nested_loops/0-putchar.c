@@ -1,12 +1,17 @@
-#include <stdio.h>
-#include "_putchar.c" 
+#include "main.h"
 /**
- * print_putchar - Entry point
+ * main - Entry point
  *
  * Return: Always 0 (Success)
  */
-int print_putchar(void)
+int main(void)
 {
-  printf("_putchar");
-  return (0);
+	char putchar_charactere[] = {'_', 'p', 'u', 't', 'c', 'h', 'a', 'r', '\n'};
+	int i;
+
+	for (i = 0; i < 9; i++)
+	{
+		_putchar(putchar_charactere[i]);
+	}
+	return (0);
 }
