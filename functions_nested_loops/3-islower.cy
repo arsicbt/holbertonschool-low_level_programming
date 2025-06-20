@@ -1,19 +1,22 @@
-#include
+#include "main.h"
 /**
- * main - check if c is lower.
- *
- * Return: Always 0.
+ * _islower - check if is lower.
+ * @c : index
+ * Return: 1 or 0.
  */
-int main(void)
+int _islower(char c)
 {
-	int c;
-
-	if (c <= 'a' && c >= 'z')
-	{
-		return (0);
-	}
-	else
+	if (c <= 65 && c > 90)
 	{
 		return (1);
 	}
+	else if (c <= 97 && c > 122)
+	{
+		return (1);
+	}
+	else
+	{
+		return (0);
+	}
+	return (0);
 }
