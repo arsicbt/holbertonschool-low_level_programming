@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * _islower - check if is lower.
+ * _isalpha - check if c is a charactere.
  * @c : index
  * Return: 1 or 0.
  */
