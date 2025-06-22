@@ -1,46 +1,39 @@
 #include "main.h"
 
 /**
- * print_cell - Create the matrice
- * @product - product of multiplication
- * @is_first - index 0
- */
-void print_cell(int product, int is_first)
-{
-	if (!is_first)
-	{
-		_putchar(',');
-		_putchar(' ');
-	}
-	if (product > 10 && !is_first)
-	{
-		_putchar(' ');
-	}
-	if (product >= 10)
-	{
-		_putchar('0' + product / 10);
-		_putchar('0' + product % 10);
-	}
-	else
-	{
-		_putchar('0' + product);
-	}
-}
-
-/**
- * times_table - prints the 9 times table, starting from 0
+ * times_table - Prints the 9 times table, starting with 0
  */
 void times_table(void)
 {
-	int row, col;
+	int i, j, product;
 
-	for (row = 0; row <= 9; row++)
+	for (i = 0; i <= 9; i++)
 	{
-		for (col = 0; col <= 9; col++)
+		for (j = 0; j <= 9; j++)
 		{
-			print_cell(row * col, col == 0);
+			product = i * j;
+
+			if (j != 0)
+			{
+				_putchar(',');
+				_putchar(' ');
+
+				if (product < 10)
+				{
+					_putchar(' ');
+				}
+			}
+
+			if (product >= 10)
+			{
+				_putchar((product / 10) + '0');
+				_putchar((product % 10) + '0');
+			}
+			else
+			{
+				_putchar(product + '0');
+			}
 		}
-	_putchar('\n');
+		_putchar('\n');
 	}
 }
-
