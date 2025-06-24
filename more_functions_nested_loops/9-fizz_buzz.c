@@ -1,7 +1,7 @@
 #include <stdio.h>
 /**
- * fizz_buzz - print a square
- *@n: integer
+ * main - printa fizz buzz
+ *
  * Return: always 0
  */
 int main(void)
