@@ -17,6 +17,9 @@ int _strlen(char *s)
 }
 
 /**
+ * puts_half - Check the half of a string.
+ * @str: args
+ * Return: the half.
 **/
 void puts_half(char *str)
 {
@@ -26,16 +29,16 @@ void puts_half(char *str)
 	int i;
 	int j;
 
-	if (len % 2 != 0)
+	if (len % 2)
 	{
-		for (i = n; i < str[i - 1]; i++)
+		for (i = n; i < len; i++)
 		{
 			_putchar(str[i]);
 		}
 	}
 	else
 	{
-		for (j = half; j < str[j - 1]; j++)
+		for (j = half; j < len; j++)
 		{
 			_putchar(str[j]);
 		}
