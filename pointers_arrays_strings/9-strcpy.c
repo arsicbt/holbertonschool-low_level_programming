@@ -2,6 +2,10 @@
 #include <stdio.h>
 
 /**
+ * _strcpy - make a copy
+ * @dest: destination
+ * @src: source
+ * Return: the copy
 **/
 char *_strcpy(char *dest, char *src)
 {
@@ -11,5 +15,6 @@ char *_strcpy(char *dest, char *src)
 	{
 		dest[charactere] = src[charactere];
 	}
+	dest[charactere] = '\0';
 	return dest;
 }
