@@ -1,6 +1,10 @@
 #include "main.h"
 #include <stdio.h>
 /**
+ * print_array - print un array
+ * @a: array
+ * @n: length
+ * Return: an array
 **/
 void print_array(int *a, int n)
 {
