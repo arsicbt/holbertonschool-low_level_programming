@@ -1,5 +1,12 @@
 #include <stdio.h>
 
+/**
+ * _strncpy - make a copy
+ * @dest: destination
+ * @src: source
+ * @n: length max
+ * Return: the copy
+**/
 char *_strncpy(char *dest, char *src, int n)
 {
 	int charactere;
