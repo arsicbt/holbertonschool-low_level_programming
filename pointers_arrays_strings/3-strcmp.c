@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _strcpm - compare 2 strings
+ * _strcmp - compare 2 strings
  * @s1: pointer to the start of the string
  * @s2: pointer to the start of the string
  * Return: the diference
@@ -14,8 +14,8 @@ int _strcmp(char *s1, char *s2)
 	{
 		if (s1[c] != s2[c])
 		{
-			return s1[c] - s2[c];
+			return (s1[c] - s2[c]);
 		}
 	}
-	return 0;
+	return (0);
 }
