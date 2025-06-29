@@ -24,9 +24,9 @@ char *cap_string(char *str)
 			if (str[element] == separator[sep_element])
 			{
 				if (str[element + 1] >= 97 && str[element + 1] <= 122)
-		                {
-                			str[element + 1] -= 32;
-                		}
+				{
+					str[element + 1] -= 32;
+				}
 			}
 		}
 	}
