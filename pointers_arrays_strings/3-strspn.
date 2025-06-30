@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+/**
+ * _strspn - Display the c's characteres, betwin c in a string
+ * @s: pointer to the start of of a string
+ * @accept: accepted charactere
+ * Return: NULL
+**/
+unsigned int _strspn(char *s, char *accept)
+{
+	int charactere;
+
+	for (charactere = 0; s[charactere] != '\0'; charactere++)
+	{
+		if (s[charactere] == accept[charactere])
+		{
+			s[charactere] += 1;
+		}
+	}
+	return (s);
+}
