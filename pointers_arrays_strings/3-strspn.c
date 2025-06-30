@@ -11,11 +11,12 @@ unsigned int _strspn(char *s, char *accept)
 	int charactere;
 	int acpt_char;
 	unsigned int count;
-	int valid;
-	count = 0;
-	valid = 1;
+	int v;
 
-	for (charactere = 0; s[charactere] != '\0' && valid == 1; charactere++)
+	count = 0;
+	v = 1;
+
+	for (charactere = 0; s[charactere] != '\0' && v == 1; charactere++)
 	{
 		int find = 0;
 
@@ -32,7 +33,7 @@ unsigned int _strspn(char *s, char *accept)
 		}
 		else
 		{
-			valid = 0;
+			v = 0;
 		}
 	}
 	return (count);
