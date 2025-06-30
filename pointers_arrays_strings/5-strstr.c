@@ -21,10 +21,9 @@ char *_strstr(char *haystack, char *needle)
 	{
 		for (h = 0; haystack[h] != '\0'; h++)
 		{
-			if (needle[n] == haystack[h])
+			if (haystack[h + n] == needle[n])
 			{
-				p = &haystack[h];
-				return (p);
+				return (p = &haystack[h]);
 			}
 		}
 	}
