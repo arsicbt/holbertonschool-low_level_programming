@@ -11,7 +11,7 @@ char *_memcpy(char *dest, char *src, unsigned int n)
 {
 	unsigned int octet;
 
-	for (octet = 0; octet < n && src[octet] != '\0'; octet++)
+	for (octet = 0; src[octet] < src[n]; octet++)
 	{
 		dest[octet] = src[octet];
 	}
