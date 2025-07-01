@@ -9,29 +9,18 @@
  */
 void print_diagsums(int *a, int size)
 {
-	int line;
-	int col;
+	int iteration;
 	int sum_1;
 	int sum_2;
 
 	sum_1 = 0;
 	sum_2 = 0;
 
-	for (line = 0; line < size; line++)
+	for (iteration = 0; iteration < size; iteration++)
 	{
-		for (col = 0; col <= line; col++)
-		{
-			sum_1 = a[line * size + col];
-			printf("%d", sum_1);
-		}
+		sum_1 += a[iteration * size + iteration];
+		sum_2 += a[iteration * size + (size - 1 - iteration)];
 	}
-	for (; line > 0; line--)
-	{
-		for (; col > 0; col--)
-		{
-			sum_2 = a[col * size + col];
-			printf("%d", sum_2);
-		}
-	}
+	printf("%d, %d",  sum_1, sum_2);
 	printf("\n");
 }
