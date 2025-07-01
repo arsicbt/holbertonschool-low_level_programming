@@ -9,12 +9,12 @@ void print_chessboard(char (*a)[8])
 {
 	unsigned char line;
 	unsigned char col;
-
+	
 	for (line = 0; line < 8; line++)
 	{
 		for (col = 0; col < 8; col++)
 		{
-			_putchar(a[line][col]);
+			_putchar(a[line][col])
 		}
 		_putchar('\n');
 	}
