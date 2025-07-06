@@ -1,6 +1,27 @@
 #include "main.h"
 
 /**
+ * search_y - test for the value of y
+ * @n: number to find the root of
+ * @y: number to find
+ *
+ * Return: the value of y.
+**/
+int search_y(int n, int y)
+{
+	if (y * y == n)
+	{
+		return (y);
+	}
+	if (y * y > n)
+	{
+		return (-1);
+	}
+	return (search_y(n, y + 1));
+}
+
+
+/**
  * _sqrt_recursion - returns natural square root of n
  * @n: number to find the root of
  *
@@ -8,25 +29,5 @@
 **/
 int _sqrt_recursion(int n)
 {
-	static int y;
-	int result;
-
-	if (n < 0)
-	{
-		y = 0;
-		return (-1);
-	}
-	if (y * y == n)
-	{
-		result = y;
-		y = 0;
-		return (result);
-	}
-	if (y * y > n)
-	{
-		y = 0;
-		return (-1);
-	}
-	y++;
-	return (_sqrt_recursion(n));
+	return (search_y(n, 0));
 }
