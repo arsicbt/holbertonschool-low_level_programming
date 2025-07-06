@@ -1,5 +1,11 @@
 #include "main.h"
 
+/**
+ * _sqrt_recursion - returns natural square root of n
+ * @n: number to find the root of
+ *
+ * Return: square root or -1 if none
+**/
 int _sqrt_recursion(int n)
 {
 	static int y;
