@@ -12,10 +12,10 @@ int main(int argc, char *argv[] __attribute__((unused)))
 {
 	int sum;
 
-	if (argc <= 1)
+	if (argc != 3)
 	{
 		printf("Error\n");
-		return(1);
+		return (1);
 	}
 	sum = atoi(argv[1]) * atoi(argv[2]);
 	printf("%d\n", sum);
