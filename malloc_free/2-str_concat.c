@@ -18,7 +18,19 @@ int _strlen(char *s)
 }
 
 /**
-**/
+ * str_concat - Concatenates two strings into a newly allocated string
+ * @s1: The first string
+ * @s2: The second string
+ *
+ * Return: A pointer to the newly allocated concatenated string,
+ *         or NULL if memory allocation fails
+ *
+ * Description: This function allocates enough memory to hold
+ * both strings s1 and s2, copies s1 followed by s2 into the new
+ * buffer, and returns a pointer to the result. The resulting string
+ * is null-terminated. If either input string is NULL, it is treated
+ * as an empty string.
+ */
 char *str_concat(char *s1, char *s2)
 {
 	int i, j;
@@ -29,9 +41,14 @@ char *str_concat(char *s1, char *s2)
 	len_s2 = _strlen(s2);
 	p = malloc(len_s1 + len_s2 + 1);
 
-	if (p == NULL || s1 == NULL || s2 == NULL)
+	if (p == NULL)
 	{
 		return (NULL);
+	}
+
+	if (s1 == NULL || s2 == NULL)
+	{
+		return ("");
 	}
 
 	for (i = 0; i < len_s1; i++)
