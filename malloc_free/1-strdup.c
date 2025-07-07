@@ -28,15 +28,18 @@ int _strlen(char *s)
 char *_strdup(char *str)
 {
 	int i;
-	int len = _strlen(str);
-	char *copy = malloc(len + 1);
+	int len;
+	char *copy;
 
-	if (copy == NULL)
+	if (str == NULL)
 	{
 		return (NULL);
 	}
 
-	if (str == NULL)
+	len = _strlen(str);
+	copy = malloc(len + 1);
+
+	if (copy == NULL)
 	{
 		return (NULL);
 	}
