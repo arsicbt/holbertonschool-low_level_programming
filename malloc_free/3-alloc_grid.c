@@ -2,49 +2,42 @@
 #include <stdlib.h>
 
 /**
- * _strlen - check the len of an str.
- * @s: char *
- * Return: the len.
- */
-int _strlen(char *s)
-{
-	int len = 0;
-
-	while (s[len] != '\0')
-	{
-		len++;
-	}
-	return (len);
-}
-
-/**
 **/
 int **alloc_grid(int width, int height)
 {
-	int w, h;
-	int *p_width, *p_height;
-	int len_w, len_h;
-	int **final_grid;
+	int h, i;
+	int **p_height;
+	int *p_width;
 
-	if (width < 0 || height < 0)
+	i = 0;
+
+	if (width <= 0 || height <= 0)
 	{
 		return (NULL);
 	}
 
-	len_w, len_h = _strlen(width), _strlen(height);
-	p_width = malloc(len_w * width);
-	p_height = malloc(len_h * height);
+	p_height = malloc(height * sizeof(int*));
 
-	for (w = 0; w < len_w; w++)
+	if (p_height == NULL)
 	{
-		p_width[w] = width;
-
-		for (h = 0; h < len_h; h++)
-		{
-			p_height[h] = height;
-		}
+		return (NULL);
 	}
 
-	final_grid = p_width * p_height;
-	return (final_grid);
+	for (h = 0; h < height; h++)
+	{
+		p_width = malloc(width * sizeof(int));
+
+		if (p_height == NULL)
+		{
+			while (p_height[i] < p_height[i - 1])
+			{
+				free(p_height[i]);
+				i++;
+				return (NULL);
+			}
+			free(p_width);
+		}
+		p_height[h] = p_width;
+	}
+	return p_height;
 }
