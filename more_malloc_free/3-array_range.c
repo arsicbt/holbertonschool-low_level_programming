@@ -12,21 +12,21 @@ int *array_range(int min, int max)
 	int i, len;
 	int *p;
 
-	len = max - min + 1;
+	len = max - min;
 
 	if (min > max)
 	{
 		return (NULL);
 	}
 
-	p = malloc(len * sizeof(unsigned int));
+	p = malloc(len * sizeof(unsigned int) + 1);
 
 	if (p == NULL)
 	{
 		return (NULL);
 	}
 
-	for (i = 0; i < len; i++)
+	for (i = 0; i < len + 1; i++)
 	{
 		p[i] += i;
 	}
