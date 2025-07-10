@@ -1,6 +1,12 @@
 #ifndef DOG_H
 #define DOG_H
 
+/**
+ * struct dog - Structure that defines a dog's basic information
+ * @name: Pointer to the dog's name (string)
+ * @age: Age of the dog (float)
+ * @owner: Pointer to the owner's name of the dog.
+ */
 typedef struct dog
 {
 	char *name;
