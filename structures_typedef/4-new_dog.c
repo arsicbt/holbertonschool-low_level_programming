@@ -47,6 +47,8 @@ char *_strdup(char *str)
 		copy[i] = str[i];
 	}
 
+	copy[i] = '\0';
+
 	return (copy);
 }
 
@@ -72,7 +74,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 	if (dog->name == NULL)
 	{
-		free(dog);
+		free(dog->name);
 		return (NULL);
 	}
 
@@ -80,7 +82,8 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 	if (dog->owner == NULL)
 	{
-		free(dog->name);
+		free(dog->owner);
+		free(dog);
 		return (NULL);
 	}
 
