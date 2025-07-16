@@ -4,7 +4,7 @@
 /**
  * get_op_func - pointer to the operatiosn functions
  * @s: pointer to a string
- * Reurn: the operation
+ * Return: the operation
 **/
 int (*get_op_func(char *s))(int, int)
 {
@@ -26,8 +26,8 @@ int (*get_op_func(char *s))(int, int)
 
 	if (ops[i].op && s[0] == ops[i].op[0] && s[1] == '\0')
 	{
-		return ops[i].f;
+		return (ops[i].f);
 	}
 
-	return NULL;
+	return (NULL);
 }
