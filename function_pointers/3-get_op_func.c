@@ -1,6 +1,10 @@
-#include "calc.h"
+#include "3-calc.h"
+#include <stddef.h>
 
 /**
+ * get_op_func - pointer to the operatiosn functions
+ * @s: pointer to a string
+ * Reurn: the operation
 **/
 int (*get_op_func(char *s))(int, int)
 {
@@ -15,7 +19,7 @@ int (*get_op_func(char *s))(int, int)
 
 	int i;
 
-	while (ops[i].op && s[O] != ops[i].op[0])
+	while (ops[i].op && s[0] != ops[i].op[0])
 	{
 		i++;
 	}

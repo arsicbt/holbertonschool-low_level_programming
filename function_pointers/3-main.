@@ -1,0 +1,37 @@
+#include "calc.h"
+
+/**
+*
+**/
+int main(int argc, char *argv[])
+{
+	int a, b, result;
+	int (*operation)(int)(int);
+
+	if (argc != 4)
+	{
+		printf("Error");
+		exit(98);
+	}
+
+	a = atoi(argv[1]);
+	b = atoi(argv[3]);
+
+	operation = get_op_func(agrv[2]);
+
+	if (operation == NULL)
+	{
+		printf("Error");
+		evit(99);
+	}
+
+	if ((ops == '/' || ops == '%')) && b == O || a == 0)
+	{
+		printf("Error");
+		exit(100);
+	}
+
+	result = printf("%d\n", operation(a, b))
+
+	return result;
+}

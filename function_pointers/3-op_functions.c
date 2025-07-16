@@ -1,4 +1,4 @@
-#include "calc.h"
+#include "3-calc.h"
 
 /**
  * op_add - sum of a and b
@@ -28,7 +28,7 @@ int op_sub(int a, int b)
  * @b: number 2
  * Return: the product
 **/
-int op_add(int a, int b)
+int op_mul(int a, int b)
 {
         return (a * b);
 }
@@ -39,7 +39,7 @@ int op_add(int a, int b)
  * @b: number 2
  * Return: the quotient
 **/
-int op_add(int a, int b)
+int op_div(int a, int b)
 {
         return (a / b);
 }
@@ -50,8 +50,7 @@ int op_add(int a, int b)
  * @b: number 2
  * Return: the rest
 **/
-int op_Ãmod(int a, int b)
+int op_mod(int a, int b)
 {
         return (a % b);
 }
-
