@@ -69,7 +69,9 @@ void print_all(const char * const format, ...)
 	va_list argument_list;
 
 	unsigned int format_index, types_index;
+	char *separator;
 
+	separator = "";
 	format_index = 0;
 	va_start(argument_list, format);
 
@@ -80,7 +82,9 @@ void print_all(const char * const format, ...)
 		{
 			if (format[format_index] == type_print[types_index].types)
 			{
+				separator = ", ";
 				type_print[types_index].print_func(&argument_list);
+				printf("%s", separator);
 			}
 			types_index++;
 		}
