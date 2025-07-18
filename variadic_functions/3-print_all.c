@@ -55,7 +55,7 @@ void print_string(va_list *list)
 
 /**
 **/
-void (*get_print_func(char type))
+void print_all(const char * const format, ...)
 {
 	type_t type_print[] = {
 		{"c", print_char},
@@ -64,4 +64,17 @@ void (*get_print_func(char type))
 		{"s", print_string},
 	};
 
-	
+	int i;
+
+	while (type_print[i].types && format[0] != type_print[i].types[0])
+	{
+		i++;
+	}
+
+	if (type_print[i].types == type_print[i].types[0] && format[1] == '\0')
+	{
+		return (type_print[i].f);
+	}
+
+	return (print_all());
+}

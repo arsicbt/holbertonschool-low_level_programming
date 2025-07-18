@@ -12,7 +12,7 @@ void print_strings(const char *separator, const unsigned int n, ...);
 **/
 typedef struct type_print
 {
-	char type;
+	char types;
 	void (*print_func)(va_list *);
 } type_t
 
