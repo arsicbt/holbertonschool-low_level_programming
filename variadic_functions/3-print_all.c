@@ -63,6 +63,7 @@ void print_all(const char * const format, ...)
 		{"i", print_int},
 		{"f", print_float},
 		{"s", print_string},
+		{NULL, NULL}
 	};
 
 	va_list argument_list;
