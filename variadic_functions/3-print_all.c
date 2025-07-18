@@ -4,7 +4,7 @@
 
 /**
  * print_char - Print a charactere
- * @va_list: the list of argument
+ * @list: the list of argument
  * Return: void
 **/
 void print_char(va_list *list)
@@ -14,7 +14,7 @@ void print_char(va_list *list)
 
 /**
  * print_int - Print an integer
- * @va_list: the list of argument
+ * @list: the list of argument
  * Return: void
 **/
 void print_int(va_list *list)
@@ -24,7 +24,7 @@ void print_int(va_list *list)
 
 /**
  * print_float - Print a flaot
- * @va_list: the list of argument
+ * @list: the list of argument
  * Return: void
 **/
 void print_float(va_list *list)
@@ -34,7 +34,7 @@ void print_float(va_list *list)
 
 /**
  * print_string - Print a string
- * @va_list: the list of argument
+ * @list: the list of argument
  * Description: Check directly if the string is NULL and print (nil)
  * Return: void
 **/
@@ -44,26 +44,26 @@ void print_string(va_list *list)
 
 	string = va_arg(*list, char *);
 
-	if (string != NULL)
-	{
-		printf("%s", string);
-	}
-	else
+	if (string == NULL)
 	{
 		printf("(nil)");
 	}
+	printf("%s", string);
 }
 
 /**
+ * print_all - prints anythings
+ * @format: a list of types of arguments
+ * Return: void.
 **/
 void print_all(const char * const format, ...)
 {
 	type_t type_print[] = {
-		{"c", print_char},
-		{"i", print_int},
-		{"f", print_float},
-		{"s", print_string},
-		{NULL, NULL}
+		{'c', print_char},
+		{'i', print_int},
+		{'f', print_float},
+		{'s', print_string},
+		{0, NULL}
 	};
 
 	va_list argument_list;
