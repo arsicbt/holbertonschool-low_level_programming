@@ -1,5 +1,6 @@
 #include "variadic_functions.h"
 #include <stdio.h>
+#include <stdarg.h>
 
 /**
  * print_char - Print a charactere
@@ -8,7 +9,7 @@
 **/
 void print_char(va_list *list)
 {
-	printf("%c", va_list(*list, char));
+	printf("%c", va_arg(*list, int));
 }
 
 /**
@@ -18,7 +19,7 @@ void print_char(va_list *list)
 **/
 void print_int(va_list *list)
 {
-	printf("%d", va_list(*list, int));
+	printf("%d", va_arg(*list, int));
 }
 
 /**
@@ -28,7 +29,7 @@ void print_int(va_list *list)
 **/
 void print_float(va_list *list)
 {
-	printf("%f", va_list(*list, float));
+	printf("%f", va_arg(*list, double));
 }
 
 /**
@@ -41,15 +42,15 @@ void print_string(va_list *list)
 {
 	char *string;
 
-	string = va_list(*list, char *)
+	string = va_arg(*list, char *);
 
-	if (string = NULL)
+	if (string != NULL)
 	{
-		printf("(nil)");
+		printf("%s", string);
 	}
 	else
 	{
-		printf("%s", string);
+		printf("(nil)");
 	}
 }
 
@@ -64,17 +65,27 @@ void print_all(const char * const format, ...)
 		{"s", print_string},
 	};
 
-	int i;
+	va_list argument_list;
 
-	while (type_print[i].types && format[0] != type_print[i].types[0])
+	unsigned int format_index, types_index;
+
+	format_index = 0;
+	va_start(argument_list, format);
+
+	while (format != NULL && format[format_index] != '\0')
 	{
-		i++;
+		types_index = 0;
+		while (type_print[types_index].types != 0)
+		{
+			if (format[format_index] == type_print[types_index].types)
+			{
+				type_print[types_index].print_func(&argument_list);
+			}
+			types_index++;
+		}
+		format_index++;
 	}
 
-	if (type_print[i].types == type_print[i].types[0] && format[1] == '\0')
-	{
-		return (type_print[i].f);
-	}
-
-	return (print_all());
+	va_end(argument_list);
+	printf("\n");
 }
