@@ -85,6 +85,7 @@ void print_all(const char * const format, ...)
 				printf("%s", separator);
 				type_print[types_index].print_func(&argument_list);
 				separator = ", ";
+				break;
 			}
 			types_index++;
 		}
