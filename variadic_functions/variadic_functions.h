@@ -5,4 +5,15 @@ int sum_them_all(const unsigned int n, ...);
 void print_numbers(const char *separator, const unsigned int n, ...);
 void print_strings(const char *separator, const unsigned int n, ...);
 
+/**
+ * struct for_print - Use to keep a type and an display function
+ * @type: the future type of element
+ * @print_func: pointer to the function that print that type
+**/
+typedef struct for_print
+{
+	char type;
+	void (*print_func)(va_list *);
+} p_t
+
 #endif
