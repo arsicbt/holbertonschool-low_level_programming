@@ -40,15 +40,15 @@ void print_float(va_list *list)
 **/
 void print_string(va_list *list)
 {
-	char *string;
+	char *s;
 
-	string = va_arg(*list, char *);
+	s = va_arg(*list, char *);
 
-	if (string == NULL)
+	if (s == NULL)
 	{
 		printf("(nil)");
 	}
-	printf("%s", string);
+	printf("%s", s);
 }
 
 /**
@@ -82,9 +82,9 @@ void print_all(const char * const format, ...)
 		{
 			if (format[format_index] == type_print[types_index].types)
 			{
-				separator = ", ";
-				type_print[types_index].print_func(&argument_list);
 				printf("%s", separator);
+				type_print[types_index].print_func(&argument_list);
+				separator = ", ";
 			}
 			types_index++;
 		}
