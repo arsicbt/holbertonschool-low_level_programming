@@ -10,10 +10,10 @@ void print_strings(const char *separator, const unsigned int n, ...);
  * @type: the future type of element
  * @print_func: pointer to the function that print that type
 **/
-typedef struct for_print
+typedef struct type_print
 {
 	char type;
 	void (*print_func)(va_list *);
-} p_t
+} type_t
 
 #endif

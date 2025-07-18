@@ -52,3 +52,16 @@ void print_string(va_list *list)
 		printf("%s", string);
 	}
 }
+
+/**
+**/
+void (*get_print_func(char type))
+{
+	type_t type_print[] = {
+		{"c", print_char},
+		{"i", print_int},
+		{"f", print_float},
+		{"s", print_string},
+	};
+
+	
