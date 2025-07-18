@@ -6,7 +6,7 @@
 /**
  * sum_them_all - do the sum of n
  * @n: number
- * Retrun: the sum
+ * Return: the sum
 **/
 int sum_them_all(const unsigned int n, ...)
 {
