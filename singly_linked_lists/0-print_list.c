@@ -3,22 +3,6 @@
 #include <stddef.h>
 
 /**
- * _strlen - Check the len of an str.
- * @s: char *
- * Return: the len.
- */
-int _strlen(char *s)
-{
-	int len = 0;
-
-	while (s[len] != '\0')
-	{
-		len++;
-	}
-	return (len);
-}
-
-/**
  * print_list - Print all element of a list_t
  * @h: Pointer to the end of the list
  * Return: The number of nodes.
