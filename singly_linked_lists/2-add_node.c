@@ -1,5 +1,6 @@
 #include "lists.h"
 #include <stdlib.h>
+#include <string.h>
 
 /**
  * add_node - Add a new node(s) at the head of a string
@@ -18,7 +19,7 @@ list_t *add_node(list_t **head, const char *str)
 		return (NULL);
 	}
 
-	dup = _strdup(str);
+	dup = strdup(str);
 	if (dup == NULL)
 	{
 		free(new_node);
