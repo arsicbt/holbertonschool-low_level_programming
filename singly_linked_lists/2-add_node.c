@@ -1,8 +1,6 @@
 #include "lists.h"
-#include <stdlib.h>
 #include <string.h>
-
-#include "lists.h"
+#include <stdlib.h>
 
 /**
  * _strlen - check the len of an str.
@@ -11,13 +9,13 @@
  */
 int _strlen(const char *s)
 {
-        int len = 0;
+	int len = 0;
 
-        while (s[len] != '\0')
-        {
-                len++;
-        }
-        return (len);
+	while (s[len] != '\0')
+	{
+		len++;
+	}
+	return (len);
 }
 
 /**
