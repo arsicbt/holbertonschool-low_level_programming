@@ -2,6 +2,10 @@
 #include <stdlib.h>
 
 /**
+ * add_node - Add a new node(s) at the head of a string
+ * @head: the first node of a string
+ * @str: the linked list
+ * Return: the new node(s)
 **/
 list_t *add_node(list_t **head, const char *str)
 {
