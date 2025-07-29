@@ -9,13 +9,13 @@
  */
 int _strlen(const char *s)
 {
-        int len = 0;
+	int len = 0;
 
-        while (s[len] != '\0')
-        {
-                len++;
-        }
-        return (len);
+	while (s[len] != '\0')
+	{
+		len++;
+	}
+	return (len);
 }
 
 /**
@@ -27,27 +27,27 @@ int _strlen(const char *s)
  */
 char *_strdup(const char *str)
 {
-        int i;
-        int len;
-        char *copy;
+	int i;
+	int len;
+	char *copy;
 
-        if (str == NULL)
-        {
-                return (NULL);
-        }
+	if (str == NULL)
+	{
+		return (NULL);
+	}
 
-        len = _strlen(str);
-        copy = malloc(len + 1);
+	len = _strlen(str);
+	copy = malloc(len + 1);
 
-        if (copy == NULL)
-        {
-                return (NULL);
-        }
+	if (copy == NULL)
+	{
+		return (NULL);
+	}
 
-        for (i = 0; i < len; i++)
-        {
-                copy[i] = str[i];
-        }
+	for (i = 0; i < len; i++)
+	{
+		copy[i] = str[i];
+	}
 
-        return (copy);
+	return (copy);
 }
