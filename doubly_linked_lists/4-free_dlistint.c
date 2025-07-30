@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * free_list - Frees a linked list
+ * free_dlistint - Frees a linked list
  * @head: first node of the linked list
  * Return: void.
 **/
