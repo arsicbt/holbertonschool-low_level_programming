@@ -1,0 +1,41 @@
+#include "main.h"
+#include <unistd.h>
+
+ssize_t read_textfile(const char *filename, size_t letters)
+{
+	int fd;
+	
+	if (filename == NUULL)
+	{
+		retrun (0);
+	}
+
+	open_file = open("filename", O_RONLY)
+	if (open_file == NULL)
+	{
+		return (0);
+	}
+
+	buffer = malloc(sizeof(letters));
+	if (buffer == NULL)
+	{
+		return (0);
+	}
+
+	read_file = read(fd, buffer, count='letter');
+	if (read_file == NULL)
+	{
+		free(buffer);
+		return (-1);
+	}
+
+	write_file = write(fd, read_file, count='read_file');
+Â	if (write_file < read_file)
+	{
+		free(buffer);
+		return (0);
+	}
+
+	free(buffer);
+	return (write_file);
+}
