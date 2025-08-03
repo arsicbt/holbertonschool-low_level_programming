@@ -23,15 +23,17 @@ int append_text_to_file(const char *filename, char *text_content)
 	}
 
 	fd = open(filename, O_WRONLY | O_APPEND);
-	if (fd = -1)
+	if (fd == -1)
 	{
 		return (-1);
 	}
 
 	if (text_content != NULL)
 	{
-		while (text_content[len])
+		while (text_content[len] != '\0')
+		{
 			len++;
+		}
 
 		to_write = write(fd, text_content, len);
 		if (to_write == -1 || (size_t)to_write != len)
@@ -41,6 +43,6 @@ int append_text_to_file(const char *filename, char *text_content)
 		}
 	}
 
-	close (fd);
+	close(fd);
 	return (1);
 }
