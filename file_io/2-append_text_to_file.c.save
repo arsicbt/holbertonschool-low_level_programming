@@ -1,0 +1,19 @@
+#include <fcntl.h>
+#include <unistd.h>
+#include <stdlib.h>
+
+int append_text_to_file(const char *filename, char *text_content)
+{
+	int fd;
+	ssize_t write_file;
+	size_t len;
+
+	write_file, len = 0, 0;
+
+	if (filename == NUL)
+	{
+		return (-1);
+	}
+
+
+	fd = open(filenme
