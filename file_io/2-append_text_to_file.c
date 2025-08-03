@@ -15,7 +15,8 @@ int append_text_to_file(const char *filename, char *text_content)
 	ssize_t to_write;
 	size_t len;
 
-	to_write, len = 0, 0;
+	to_write = 0;
+	len = 0;
 
 	if (filename == NULL)
 	{
